@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Task # 1 -->
+
+    <form action="" method="get">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="name" id="name" required placeholder="Enter Name..."></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email1" id="email1" required placeholder="Enter Email..."></td>
+
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" name="password" id="password" required placeholder="Enter Password..."></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button>Sign Up</button></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            <tr>
+                <td id="namef"></td>
+                <td id="emailf"></td>
+                <td id="passf"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Task # 2 -->
+    <div>
+        <h2>Read More Read Less Button</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi
+            lorem egestas vitae scel<span id="dots">...</span><span id="more" style="display: none;">erisque enim ligula
+                venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus
+                vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero
+                sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer
+                fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+            <a href="#" onclick="LoadMore()" id="LoadBtn">Read more</a></p>
+
+    </div>
+
+
+
+    <!-- Task # 3 -->
+
+
+    <section>
+        <div id="tblData"></div>
+        <h3>Table Data</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="stdName" id="stdName"></td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td><input type="text" name="stdClass" id="stdClass"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="addData()">Add Data</button>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #swapPic {
+            cursor: pointer;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TASK # 1 -->
+    <a href="#" onclick="gretting()">Greeting</a>
+    <br><br><br>
+
+    <!-- Task # 2 -->
+
+    <div>
+        <img src="Mobile 1.jpg" width="250px" height="350px" alt="" onclick="showPopup()">
+        <img src="Mobile 2.jpg" width="250px" height="350px" alt="" onclick="showPopup()">
+        <img src="Mobile 3.jpg" width="250px" height="350px" alt="" onclick="showPopup()">
+        <img src="Mobile 4.jpg" width="250px" height="350px" alt="" onclick="showPopup()">
+    </div>
+
+    <!-- Task # 3 -->
+
+    <section>
+        
+        <h3>Table Data</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="stdName" id="stdName"></td>
+            </tr>
+            <tr>
+                <th>Class</th>
+                <td><input type="text" name="stdClass" id="stdClass"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="addData()">Add Data</button>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <div id="tblData"></div>
+        <br><br>
+    </section>
+
+    <!-- TASK # 4 -->
+
+    <img id="swapPic" src="1.jpg" onMouseover="src='2.jpg'" onMouseout="src='1.jpg'">
+    <br><br><br>
+
+
+    <!-- TASK # 5 -->
+
+    <button onclick="increment()">Increment</button>
+    <h2 id="counter">0</h2>
+    <button onclick="decrement()">Decrement</button>
+
+    <script>
+
+        // Task # 1
+        function gretting() {
+            alert("Hello Sir / Hello Ma'am");
+        }
+
+        // Task # 2
+
+        function showPopup() {
+            alert("Thanks for purchasing a phone from us.")
+        }
+
+
+        //  Task # 3
+
+        persons = [
+            { name: "Basit", class: "10th" },
+            { name: "Muzammil", class: "10th" },
+            { name: "Bilal", class: "10th" },
+        ]
+        
+
+        function LoadTableData() {
+            var html = "<table><tr><th>Index</th><th>Name</th><th>Class</th><th></th></tr>";
+            for (var i = 0; i < persons.length; i++) {
+                html += "<tr>";
+                html += "<td>" + i + "</td>";
+                html += "<td>" + persons[i].name + "</td>";
+                html += "<td>" + persons[i].class + "</td>";
+                html += "<td><button onClick='func(" + i + ")'>Delete</button></td>";
+                html += "</tr>"
+            }
+            html += "</table>";
+            document.getElementById("tblData").innerHTML = html;
+        }
+        LoadTableData();
+
+        function func(id) {
+            persons.splice(id, 1);
+            LoadTableData();
+
+        }
+
+
+        function addData() {
+            var name = document.getElementById("stdName").value;
+            var cass = document.getElementById("stdClass").value;;
+            persons.push({ name: name, class: cass });
+            LoadTableData();
+            document.getElementById("stdName").value = "";
+            document.getElementById("stdClass").value = "";
+        }
+
+        // Task # 5
+
+        function increment() {
+            var counter = Number(document.getElementById('counter').innerHTML);
+            counter += 1;
+            var updated_Counter = document.getElementById('counter').innerHTML = counter;
+        }
+        function decrement() {
+            var counter = Number(document.getElementById('counter').innerHTML);
+            counter -= 1;
+            var updated_Counter = document.getElementById('counter').innerHTML = counter;
+        }
+    </script>
+</body>
+
+</html>
